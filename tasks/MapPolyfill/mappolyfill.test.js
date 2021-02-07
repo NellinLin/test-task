@@ -1,6 +1,6 @@
 const MyMap = require('./MapPolyfill.js');
 
-describe('Gолифилл MyMap', () => {
+describe('Полифилл MyMap', () => {
     test('Невалидные данные iterable в конструкторе', () => {
         expect(() => new MyMap(NaN)).toThrow('Iterable is not iterable');
         expect(() => new MyMap('')).toThrow('Iterable is not iterable');
@@ -109,5 +109,4 @@ describe('Gолифилл MyMap', () => {
 
         expect(map.size).toEqual(0);
     });
-
 });
