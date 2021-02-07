@@ -99,6 +99,7 @@ MyMap.prototype.forEach = function(callback, args) {
 
 MyMap.prototype.get = function(key) {
     const index = this._keys.indexOf(key);
+
     return (index !== -1) ? this._values[index] : undefined;
 }
 
