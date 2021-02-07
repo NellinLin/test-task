@@ -4,15 +4,7 @@ function Class() {}
 
 Class.extend = function (desc) {
     var parent = this;
-    var child;
-
-    if (!desc.hasOwnProperty('constructor')) {
-        desc.constructor = function() {
-            parent.apply(this, arguments);
-        }
-    }
-
-    child = desc.constructor;
+    var child = (desc.hasOwnProperty('constructor')) ? desc.constructor : function() { parent.apply(this, arguments); };
 
     child.prototype = Object.create(parent.prototype, Object.getOwnPropertyDescriptors(desc));
     child.extend = this.extend;
