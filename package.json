@@ -1,0 +1,24 @@
+{
+  "name": "test-task",
+  "version": "1.0.0",
+  "description": "https://rubaxa.github.io/playground/#extend",
+  "main": "MapPolyfill-exaple.js",
+  "scripts": {
+    "test": "jest",
+    "test-coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NellinLin/test-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NellinLin/test-task/issues"
+  },
+  "homepage": "https://github.com/NellinLin/test-task#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

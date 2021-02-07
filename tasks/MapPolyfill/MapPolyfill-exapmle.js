@@ -2,12 +2,14 @@ const MyMap = require('./MapPolyfill.js');
 
 console.log(new MyMap()); // MyMap { _keys: [], _values: [] }
 console.log(new MyMap(undefined)); //MyMap { _keys: [], _values: [] }
-// console.log(new MyMap('')); // Iterable is not iterable
-// console.log(new MyMap({})); // TypeError: iterable is not iterable
+// console.log(new MyMap(NaN)); // // TypeError: Iterable is not iterable
+// console.log(new MyMap('')); // TypeError: Iterable is not iterable
+// console.log(new MyMap({})); // TypeError: Iterable is not iterable
+// console.log(new MyMap(() => { return 0; })); // TypeError: Iterable is not iterable
 
 console.log(new MyMap([[1,2], ['1', 2]])); // MyMap { _keys: [ 1, '1' ], _values: [ 2, 2 ] }
 console.log(new MyMap([[1], {}])); // MyMap { _keys: [ 1, undefined ], _values: [ undefined, undefined ] }
-// console.log(new MyMap(['', ''])); // Iterator value is not an entry 
+// console.log(new MyMap(['', ''])); // TypeError: Iterator value is not an entry 
 
 const map = new MyMap([[1, 2, 3], ['1', 4], ['one']]);
 
@@ -27,7 +29,7 @@ console.log(map.delete('two')); // true
 console.log(map.delete('ok')); // false
 console.log(map.size); // 4
 
-map.forEach(function(value, key) {
+map.forEach(function(key, value) {
     console.log(`${key} => ${value}`);
 });
 // 1 => 2

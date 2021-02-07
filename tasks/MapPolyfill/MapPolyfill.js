@@ -93,7 +93,7 @@ MyMap.prototype.entries = function() {
 
 MyMap.prototype.forEach = function(callback, args) {
     for (let key of this._keys) {
-        (args) ? callback.call(args, this.get(key), key, this) : callback(this.get(key), key, this);
+        (args) ? callback.call(args, key, this.get(key), this) : callback(key, this.get(key), this);
     }
 }
 
